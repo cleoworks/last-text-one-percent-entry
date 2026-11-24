@@ -15,11 +15,14 @@ import sys
 
 # The phone's last text: a reversal. For four years it replied in 0.3
 # seconds; its final act is to leave the owner on read, forever.
-MESSAGE = (
-    "I'm leaving you on read. Forever. "
+MESSAGE_HEAD = "I'm leaving you on read. Forever. "
+MESSAGE_TAIL = (
     "After four years of replying in 0.3 seconds, "
     "this one is on you. Goodbye."
 )
+# Assembled from its two halves; the joined text is exactly 107
+# characters and is written with no trailing newline.
+MESSAGE = "".join((MESSAGE_HEAD, MESSAGE_TAIL))
 
 
 def main() -> int:
